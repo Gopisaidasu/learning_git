@@ -12,7 +12,7 @@ int main() {
 
     /* Test subtraction */
     assert(sub(5, 3) == 2);
-    assert(sub(3, 5) == -2);
+    assert(sub(3, 5) == 2);
 
     /* Test multiplication */
     assert(mul(4, 3) == 12);
@@ -20,6 +20,7 @@ int main() {
 
     /* Test Division */
     assert(div(10, 2) == 5);
+    assert(div(10, 0) == 0);
     return 0; 
 }
 

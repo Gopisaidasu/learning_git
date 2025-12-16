@@ -1,6 +1,6 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99
+CFLAGS = -Wall -Wextra 
 
 # Paths and source files
 UNITY_DIR = unity
@@ -18,8 +18,8 @@ calc: $(SRC_FILES) main.c
 	$(CC) $(CFLAGS) -o calc $(SRC_FILES) main.c
 
 # Compile the test runner (testrunner) and link with Unity framework
-testrunner: $(TEST_SRC_FILES) $(SRC_FILES) $(UNITY_SRC_FILES)
-	g++ $(CFLAGS) -o testrunner $(TEST_SRC_FILES) $(SRC_FILES) $(UNITY_SRC_FILES)
+testrunner: $(TEST_SRC_FILES) $(SRC_FILES) 
+	g++ $(CFLAGS) -o testrunner $(TEST_SRC_FILES) $(SRC_FILES)
 
 # Run tests by invoking testrunner
 test: testrunner
