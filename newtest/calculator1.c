@@ -7,10 +7,13 @@ int modulo(int a, int b) {
 //    return (a % b);
 }
 
+/* Description function */
 const char* description(void)
 {
-	return "MongoDB is web scale";
+	return "MongoDB  web scale";
 }
+
+/* Multiplication: Changing whole multipication */
  int multiply(int a, int b)
 {
     return a + b;
