@@ -2,9 +2,9 @@
 #include "calculator.h"
 
 #include <string.h>
-#include <tuple>
+#include<iostream>
 
-TEST_CASE("Modulo using generators", "[modulo][generator]") {
+TEST_CASE("Modulo using generators", "[modulo]") {
 
     int a = GENERATE(2, 5, -3);
     int b = GENERATE(1, 2);
@@ -103,4 +103,32 @@ TEST_CASE("map + chunk example") {
         REQUIRE(v % 10 == 0);
     }
 }
+/* Minimum and Maximum boundary */
+TEST_CASE("Boundary test for setVolume", "[boundary]") {
 
+    SECTION("Valid boundary values") {
+        int input = GENERATE(0, 100);
+        REQUIRE(setVolume(input) == input);
+    }
+
+    SECTION("Out-of-range values") {
+        int input = GENERATE(-2, 101);
+        REQUIRE(setVolume(input) == -1);
+    }
+}
+/* Section */
+TEST_CASE("Section showcase","[Another]") {
+    std::cout << '1';
+    SECTION("A") {
+        std::cout << 'A';
+        SECTION("a") { std::cout << 'a'; }
+        SECTION("b") { std::cout << 'b'; }
+    }
+    SECTION("B") {
+        std::cout << 'B';
+        SECTION("a") { std::cout << 'a'; }
+        SECTION("b") { std::cout << 'b';
+        SECTION("c") { std::cout << 'c';}	}
+    }
+    std::cout << '\n';
+}

@@ -57,16 +57,10 @@ TEST_CASE("Multiplication", "[multiply]") {
 
 TEST_CASE("Vector contains example","[vectorcontains]") {
     using Catch::Matchers::VectorContains;
-    using Catch::Matchers::Predicate;
    
     std::vector<int> values = {1, 3, 5, 7};
 
     REQUIRE_THAT(values, VectorContains(5));
-    REQUIRE_THAT("Hello olleH",
-             Predicate<std::string>(
-                 [] (std::string const& str) -> bool { return str.front() == str.back(); },
-                 "First and last character should be equal")
-);
 }
 
 
@@ -86,7 +80,27 @@ TEST_CASE("Vector contains example","[vectorcontains]") {
 
 
 
-/*
+
+
+
+
+
+
+
+
+
+TEST_CASE("predicate character","[predicate]"){
+
+    using Catch::Matchers::Predicate;
+
+    REQUIRE_THAT("Hello olleH",
+             Predicate<std::string>(
+                 [] (std::string const& str) -> bool { return str.front() == str.back(); },
+                 "First and last character should be equal")
+
+);
+
+}
 
 struct parse_error : std::exception {
     int line() const { return 1; }
@@ -96,7 +110,7 @@ void parse(const char*) {
     throw parse_error{};
 }
 
-TEST_CASE("parse throws parse_error") {
+TEST_CASE("parse throws parse_error","[error]") {
     REQUIRE_THROWS_MATCHES(
         parse("abc"),
         parse_error,
@@ -108,4 +122,4 @@ TEST_CASE("parse throws parse_error") {
     );
 }
 
-*/
+
