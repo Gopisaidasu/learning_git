@@ -103,6 +103,16 @@ TEST_CASE("map + chunk example") {
         REQUIRE(v % 10 == 0);
     }
 }
+
+/* Iterator*/
+TEST_CASE("Iterator generator example","[IT]") {
+static const std::vector<int> data = {1, 2, 3, 4};
+
+    int value = GENERATE(from_range(data));
+
+    REQUIRE(value >= 1);
+}
+
 /* Minimum and Maximum boundary */
 TEST_CASE("Boundary test for setVolume", "[boundary]") {
 
@@ -132,3 +142,5 @@ TEST_CASE("Section showcase","[Another]") {
     }
     std::cout << '\n';
 }
+
+
