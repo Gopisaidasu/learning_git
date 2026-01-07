@@ -22,17 +22,17 @@ double multiply(double a, double b) {
 
 /* Division: Returning int and changing division */
 double divide(double a, double b) {
-   /*if (b == 0) return 0; 
+   if (b == 0) return 0; 
    else if(a>b)
     	return (int)(a / b);
     else
 	return (int)(b/a);
-    */
-   if (b == 0) return 0; 
+    
+/*   if (b == 0) return 0; 
    else
 	return a/b;
    	
-
+*/
 }
 /* Modulo */
 int modulo(int a, int b) {
