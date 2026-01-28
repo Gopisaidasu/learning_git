@@ -1,5 +1,5 @@
 #include "String.h"
-#include <stddef.h>
+#include<stddef.h>
 #include<string.h>
 #include<stdexcept>
 #define TEMP_THRESHOLD 30
@@ -57,7 +57,7 @@ int isPalindrome(const char *str)
     }
     return 1;
 }
-/* To check cahr in a string */
+/* To check char in a string */
 int isTrue(const char *str1, const char s2)
 {
     if (!str1 || str1[0] == '\0'|| !s2)
@@ -69,7 +69,31 @@ int isTrue(const char *str1, const char s2)
 		    return 1;
     return 0;
 }
+/* To check string in a string is present or not */
+int isString(const char *str1,const char *str2)
+{
+	int i,j;
+	if(!str1 || !str2 || str1[0]=='\0' || str2[0]=='\0')
+	return -1;
 
+	  /* substring search */
+    for (i = 0; str1[i] != '\0'; i++)
+    {
+        j = 0;
+        while (str1[i + j] != '\0' && str2[j] != '\0' &&
+               str1[i + j] == str2[j])
+        {
+            j++;
+        }
+
+        /* full str2 matched */
+        if (str2[j] == '\0')
+            return 1;
+    }
+
+    return 0;
+		
+}
 /*isTemperature: To check room temperature*/
 int isTemperature(int t)
 {
@@ -77,11 +101,13 @@ int isTemperature(int t)
             throw std::out_of_range("Warning out of range");
 
         if(t >= TEMP_THRESHOLD)
-	{
-		
+	{		
             return 1;
 	}
 	else
 	    return 0;
 
 }
+
+
+

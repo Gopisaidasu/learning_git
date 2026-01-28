@@ -7,3 +7,4 @@ int isLength(const char *str);
 int isPalindrome(const char *str1);
 int isTemperature(int);
 int isTrue(const char*,const char);
+int isString(const char* ,const char*);

@@ -39,13 +39,23 @@ TEST_CASE("Check if palindrome or not","[Palindrome]") {
 	REQUIRE(isPalindrome("go")==0);
 	REQUIRE(isPalindrome(NULL)==-1);
 }
-/* Check char in string */
+/* Checking char in string */
 TEST_CASE("Check char is present in a string","[check]")
 {
 	REQUIRE(isTrue("advanced",'a')==1);
 	REQUIRE(isTrue("embedded",'E')==0);
 	REQUIRE(isTrue("",'e')==-1);
+	REQUIRE(isTrue(NULL,'e')==-1);
 	REQUIRE(isTrue("abc",'\0')==-1);
+}
+/* Checking string in a string */
+
+TEST_CASE("Check string is present in a string","[str]")
+{
+	REQUIRE(isString("embedded","edd")==1);
+	REQUIRE(isString("abcd","Bcd")==0);
+	REQUIRE(isString("","abc")==-1);
+	REQUIRE(isString("abc",NULL)==-1);
 }
 /* Checking Room Temperature */
 TEST_CASE("Checking Room Temperature", "[embedded]") {

@@ -30,26 +30,6 @@ TEST_CASE("Generator", "[modulos]") {
     }
 }
 
-/* Factorial */
-namespace
-{
-	int Factorial(size_t number)
-	{
-		return number <=1?number:Factorial(number-1)*number;
-	}
-}
-TEST_CASE("Factorial","[fact]") {
-	SECTION("Factorial of 0 is 1")
-	{
-		REQUIRE(Factorial(0)==1);
-	}
-	SECTION("Factorial of 1 and higher(pass)")
-	{
-		REQUIRE(Factorial(1)==1);
-		REQUIRE(Factorial(3)==6);
-		REQUIRE(Factorial(4)==25);
-	}
-}
 
 /* Table */
 TEST_CASE("tables", "[generators]") {
@@ -144,3 +124,23 @@ TEST_CASE("Section showcase","[Another]") {
 }
 
 
+/* Factorial */
+namespace
+{
+	int Factorial(size_t number)
+	{
+		return number <=1?number:Factorial(number-1)*number;
+	}
+}
+TEST_CASE("Factorial","[fact]") {
+	SECTION("Factorial of 0 is 1")
+	{
+		REQUIRE(Factorial(0)==1);
+	}
+	SECTION("Factorial of 1 and higher(pass)")
+	{
+		REQUIRE(Factorial(1)==1);
+		REQUIRE(Factorial(3)==6);
+		REQUIRE(Factorial(4)==25);
+	}
+}
