@@ -4,7 +4,7 @@
 int main() {
     char op;
     double num1, num2, result;
-    int res,n1,n2;
+    int res;
     int i1,i2;
     // Ask user for input
     printf("Enter an operator (+, -, *, /,%% ): ");

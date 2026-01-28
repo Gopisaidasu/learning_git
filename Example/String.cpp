@@ -1,7 +1,7 @@
 #include "String.h"
 #include <stddef.h>
 #include<string.h>
-#include<iostream>
+#include<stdexcept>
 #define TEMP_THRESHOLD 30
 
 
@@ -41,18 +41,13 @@ int isPalindrome(const char *str)
 {
     if (!str)
         return -1;
-
     int left = 0;
     int right = 0;
-
     while (str[right] != '\0')
         right++;
-
     if (right == 0)
         return 1;
-
     right--;
-
     while (left < right) {
         if (str[left] != str[right])
             return 0;
@@ -60,10 +55,20 @@ int isPalindrome(const char *str)
         left++;
         right--;
     }
-
     return 1;
 }
+/* To check cahr in a string */
+int isTrue(const char *str1, const char s2)
+{
+    if (!str1 || str1[0] == '\0'|| !s2)
+        return -1;
 
+    int ivar=0;
+    for(ivar=0;str1[ivar]!='\0';ivar++)
+	    if(str1[ivar]==s2)
+		    return 1;
+    return 0;
+}
 
 /*isTemperature: To check room temperature*/
 int isTemperature(int t)

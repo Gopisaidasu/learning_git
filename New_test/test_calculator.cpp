@@ -38,8 +38,8 @@ namespace
 		return number <=1?number:Factorial(number-1)*number;
 	}
 }
-TEST_CASE("Factorial") {
-	SECTION("Factorial of 0 is 0")
+TEST_CASE("Factorial","[fact]") {
+	SECTION("Factorial of 0 is 1")
 	{
 		REQUIRE(Factorial(0)==1);
 	}

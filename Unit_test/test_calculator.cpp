@@ -27,7 +27,8 @@ TEST_CASE("Multiplication", "[multiply]") {
     REQUIRE(multiply(5, 0) == 0);
     REQUIRE(multiply(5, -1) == -5);
     REQUIRE(multiply(-5, -1) == 5);
-    REQUIRE(multiply(2.2, 1.2) == 2.64);
+    REQUIRE(multiply(0.1, 0.2) == Approx(0.02));
+    REQUIRE(multiply(4.6, 4.0) == Approx(18.40));
 }
 
 /* ---------- DIVISION TESTS ---------- */

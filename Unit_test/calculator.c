@@ -17,7 +17,7 @@ double subtract(double a, double b) {
 
 /* Multiplication */
 double multiply(double a, double b) {
-    		return (a*b);
+    		return (int)(a*b);
 }
 
 /* Division: Returning int and changing division */
@@ -38,6 +38,6 @@ double divide(double a, double b) {
 int modulo(int a, int b) {
     if (b == 0)
         return 0;
-//    return ((unsigned int)a % b);
-    return (a % b);
+    return ((unsigned int)a % b);
+//    return (a % b);
 }

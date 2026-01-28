@@ -5,6 +5,7 @@ int main() {
 
 	const char *s1="ABC";
 	const char *s2="ABC";
+	const char s3='B';
 	const char *str="ABA";
 	int index;
 	printf("Enter an string operation\n");
@@ -12,6 +13,7 @@ int main() {
 	printf("case 2: To compare strings are equal or not\n");
 	printf("case 3: To Check length of string \n");
 	printf("case 4: To check given string is palindrome or not\n");
+	printf("case 5: To Check givrn char is present in given string \n");
 
 
 	scanf("%d",&index);	
@@ -48,6 +50,13 @@ int main() {
 			else
 				printf("not a palindrome\n"); 
 			break;
+		case 5:
+			if(isTrue(str,s3))
+				printf("char is present\n");
+			else
+				printf("char is not there in string\n");
+			break;
+
 		default:
 			printf("invalid operation\n");
 

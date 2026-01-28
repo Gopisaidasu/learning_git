@@ -48,11 +48,6 @@ using Catch::Matchers::Matches;
 REQUIRE_THAT("MongoDB v6", Matches("MongoDB v[0-7]"));
 }
 
-/* Multiplication */
-TEST_CASE("Multiplication", "[multiply]") {
-    REQUIRE(multiply(2, 3) == 6);
-    REQUIRE(multiply(-2, 3) == -6);
-}
 
 
 TEST_CASE("Vector contains example","[vectorcontains]") {
