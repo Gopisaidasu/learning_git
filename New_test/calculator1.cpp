@@ -1,4 +1,5 @@
 #include "calculator.h"
+#include<stdexcept>
 /* Modulo */
 int modulo(int a, int b) {
     if (b == 0)
@@ -12,7 +13,12 @@ const char* description(void)
 {
 	return "MongoDB  web scale";
 }
-
+/* division */
+int divide(int a, int b) {
+    if (b == 0)
+        throw std::runtime_error("divide by zero");
+    return a / b;
+}
 /*setVolume: Boundary function */
 int setVolume(int v) {
     if (v < 0 || v > 100)

@@ -94,6 +94,46 @@ int isString(const char *str1,const char *str2)
     return 0;
 		
 }
+/* To check how many times a char present in given string */
+int countChar(const char *str1, const char s2)
+{
+	int i,j;
+	int count=0;
+	if(!str1 || str1[0]=='\0' || !s2)
+	return -1;
+
+	  /* each char search */
+    /*   for (i = 0; str1[i] != '\0'; i++)
+    {
+        for (j = 0; j < i; j++)
+        {
+            if (str1[i] == str1[j])
+                break;
+        }
+
+        if (i == j)
+        {
+            count = 0;
+            for (j = 0; str1[j] != '\0'; j++)
+            {
+                if (str1[j] == str1[i])
+                    count++;
+            }
+
+            printf("%c : %d\n", str1[i], count);
+			    }*/
+
+    for (i = 0; str1[i] != '\0'; i++)
+    {
+	if(str1[i]==s2)
+		count++;
+    }
+    if(count==0)
+	    return 0;
+    else
+    	return count;
+
+}
 /*isTemperature: To check room temperature*/
 int isTemperature(int t)
 {

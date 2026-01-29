@@ -9,6 +9,7 @@ int main() {
 	const char *str="ABA";
 	const char *str1="BA";
 	int index;
+	int x=0;
 	printf("Enter an string operation\n");
 	printf ("case 1: To check string has even char or odd char\n");
 	printf("case 2: To compare strings are equal or not\n");
@@ -16,6 +17,7 @@ int main() {
 	printf("case 4: To check given string is palindrome or not\n");
 	printf("case 5: To Check given char is present in given string \n");
 	printf("case 6: To Check given string is present in given string \n");
+	printf("case 7: To Check char count in a given string \n");
 
 
 	scanf("%d",&index);	
@@ -63,6 +65,13 @@ int main() {
 				printf("string is present\n");
 			else
 				printf("string is not there in string\n");
+			break;
+		case 7:
+			x =countChar(str,s3);
+			if(x>0)
+				printf("%c count in %s string is %d\n",s3,str,x);
+			else
+				printf("char is not there in string\n");
 			break;
 
 		default:

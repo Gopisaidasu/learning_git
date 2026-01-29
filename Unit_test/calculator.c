@@ -1,5 +1,5 @@
 #include "calculator.h"
-
+#include<iostream>
 /* Addition: return value is int instead of double */
 int add(double a, double b) {
     return (a + b);
@@ -22,7 +22,7 @@ double multiply(double a, double b) {
 
 /* Division: Returning int and changing division */
 double divide(double a, double b) {
-   if (b == 0) return 0; 
+   if (b == 0) throw std::runtime_error("Divide by zero"); 
    else if(a>b)
     	return (int)(a / b);
     else

@@ -57,6 +57,15 @@ TEST_CASE("Check string is present in a string","[str]")
 	REQUIRE(isString("","abc")==-1);
 	REQUIRE(isString("abc",NULL)==-1);
 }
+/* Checking char count in a string */
+
+TEST_CASE("Check char count in a string","[count]")
+{
+	REQUIRE(countChar("abcdbe",'b')==2);
+	REQUIRE(countChar("abcdbe",'f')==0);
+	REQUIRE(isTrue("",'e')==-1);
+	REQUIRE(isTrue(NULL,'e')==-1);
+}
 /* Checking Room Temperature */
 TEST_CASE("Checking Room Temperature", "[embedded]") {
 
