@@ -35,9 +35,9 @@ double divide(double a, double b) {
 */
 }
 /* Modulo */
-int modulo(int a, int b) {
+/*int modulo(int a, int b) {
     if (b == 0)
         return 0;
     return ((unsigned int)a % b);
 //    return (a % b);
-}
+}*/

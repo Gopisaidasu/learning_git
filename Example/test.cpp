@@ -63,8 +63,9 @@ TEST_CASE("Check char count in a string","[count]")
 {
 	REQUIRE(countChar("abcdbe",'b')==2);
 	REQUIRE(countChar("abcdbe",'f')==0);
-	REQUIRE(isTrue("",'e')==-1);
-	REQUIRE(isTrue(NULL,'e')==-1);
+	REQUIRE(countChar("",'e')==-1);
+	REQUIRE(countChar("abc",'\0')==-1);
+	REQUIRE(countChar(NULL,'e')==-1);
 }
 /* Checking Room Temperature */
 TEST_CASE("Checking Room Temperature", "[embedded]") {
@@ -85,12 +86,14 @@ TEST_CASE("Checking Room Temperature", "[embedded]") {
 	INFO("lower temperature value");
         REQUIRE_THROWS_AS(isTemperature(-1), std::out_of_range);
         REQUIRE_THROWS_AS(isTemperature(-20), std::out_of_range);
+        REQUIRE_THROWS_WITH(isTemperature(-20), "Warning lower range");
     }
 
     SECTION("Upper boundary violations") {
 	INFO("upper temperature value");
         REQUIRE_THROWS_AS(isTemperature(101), std::out_of_range);
         REQUIRE_THROWS_AS(isTemperature(150), std::out_of_range);
+        REQUIRE_THROWS_WITH(isTemperature(150), "Warning High range");
     }
 }
 

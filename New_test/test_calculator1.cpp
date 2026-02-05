@@ -51,7 +51,8 @@ TEST_CASE("Throw an error","[exception]") {
 	SECTION(" throws as")
 	{
 	REQUIRE_THROWS_WITH(divide(10, 0),"divide by zero");
-	REQUIRE_THROWS_WITH(divide(10, 0),"error");
+	CHECK_THROWS_WITH(divide(10, 0),"error");
+	REQUIRE_THROWS_MATCHES(divide(10, 0),std::runtime_error,Catch::Matchers::Message("divide by zero"));
 	}
 
 }

@@ -97,7 +97,7 @@ int isString(const char *str1,const char *str2)
 /* To check how many times a char present in given string */
 int countChar(const char *str1, const char s2)
 {
-	int i,j;
+	int i;
 	int count=0;
 	if(!str1 || str1[0]=='\0' || !s2)
 	return -1;
@@ -137,8 +137,10 @@ int countChar(const char *str1, const char s2)
 /*isTemperature: To check room temperature*/
 int isTemperature(int t)
 {
-	if (t<0||t>100)
-            throw std::out_of_range("Warning out of range");
+	if (t<0)
+            throw std::out_of_range("Warning lower range");
+	if (t>100)
+            throw std::out_of_range("Warning High range");
 
         if(t >= TEMP_THRESHOLD)
 	{		
@@ -148,6 +150,4 @@ int isTemperature(int t)
 	    return 0;
 
 }
-
-
 
